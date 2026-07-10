@@ -5,20 +5,28 @@ land-cover-specific hydroclimatic coupling of vegetation anomalies
 across Germany during the MODIS era (2000–2024).
 
 ## Repository structure
-gee/
-germany_modis_v2.js        # Google Earth Engine extraction script
-analysis/
-analysis_v2.py             # Python analysis pipeline
-data/
-Germany_VegClimate_v2_2000_2024.csv   # Processed panel dataset
-outputs/
-01_descriptive_by_landcover.csv
-02_correlation_by_landcover.csv
-03_interaction_models.csv
-04_moderated_mediation.csv
-05_drought_year_table.csv
-06_forest_lag_tests.csv
-07_predictive_benchmark.csv
+germany-ndvi-hydroclimatic-coupling/
+│
+├── README.md
+├── LICENSE
+│
+├── gee/
+│   └── germany_modis_v2.js          # GEE extraction script
+│
+├── analysis/
+│   └── analysis_v2.py               # Ana Python analiz scripti
+│
+├── data/
+│   └── Germany_VegClimate_v2_2000_2024.csv   # İşlenmiş panel veri
+│
+└── outputs/
+    ├── 01_descriptive_by_landcover.csv
+    ├── 02_correlation_by_landcover.csv
+    ├── 03_interaction_models.csv
+    ├── 04_moderated_mediation.csv
+    ├── 05_drought_year_table.csv
+    ├── 06_forest_lag_tests.csv
+    └── 07_predictive_benchmark.csv
 
 ## Data sources
 
