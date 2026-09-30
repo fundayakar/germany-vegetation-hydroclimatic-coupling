@@ -1,61 +1,24 @@
-# Germany NDVI Hydroclimatic Coupling
+# Germany vegetation and hydroclimatic coupling
 
-Analysis scripts and processed datasets for a study examining 
-land-cover-specific hydroclimatic coupling of vegetation anomalies 
-across Germany during the MODIS era (2000–2024).
+Code and processed datasets for Funda Yakar's study of land-cover-specific vegetation anomalies across Germany during 2000–2024.
 
-## Repository structure
-germany-ndvi-hydroclimatic-coupling/
-│
-├── README.md
-├── LICENSE
-│
-├── gee/
-│   └── germany_modis_v2.js          # GEE extraction script
-│
-├── analysis/
-│   └── analysis_v2.py               # Ana Python analiz scripti
-│
-├── data/
-│   └── Germany_VegClimate_v2_2000_2024.csv   # İşlenmiş panel veri
-│
-└── outputs/
-    ├── 01_descriptive_by_landcover.csv
-    ├── 02_correlation_by_landcover.csv
-    ├── 03_interaction_models.csv
-    ├── 04_moderated_mediation.csv
-    ├── 05_drought_year_table.csv
-    ├── 06_forest_lag_tests.csv
-    └── 07_predictive_benchmark.csv
+## Analysis versions
 
-## Data sources
+- **2026 major revision:** [`revision-2026/`](revision-2026/) contains the monthly state panel, actual 5 km August grid checks, CORINE forest-class diagnostics, complete extraction and analysis scripts, seven numerical tables and five figures. Its [README](revision-2026/README.md) gives the run order, input provenance and methodological limits. This work is under manuscript revision; figures and claims may still change before journal resubmission.
+- **Earlier annual analysis:** [`gee/germany_modis_v2.js`](gee/germany_modis_v2.js), [`python/analysis_v2_final.py`](python/analysis_v2_final.py), [`Germany_VegClimate_v2_2000_2024.csv`](Germany_VegClimate_v2_2000_2024.csv) and [`outputs/`](outputs/) are retained for provenance. Their methods and conclusions should not be substituted for the monthly revision.
 
-- MODIS NDVI: MOD13Q1 Collection 6.1 — https://doi.org/10.5067/MODIS/MOD13Q1.061
-- ERA5-Land: Muñoz-Sabater et al. (2021) — https://doi.org/10.24381/cds.e2161bac
-- Land cover: MCD12Q1 Collection 6.1 — https://doi.org/10.5067/MODIS/MCD12Q1.006
-- ESA WorldCover v200: https://doi.org/10.5281/zenodo.7254221
+The original state extraction used an Earth Engine reduction scale of 5000 m rather than a common 5 km grid. The new grid is constructed explicitly in the revision folder. The revision also documents the April–October monthly windows, retrospective land-cover masks and limitations of MODIS NDVI and ERA5-Land.
 
-## Requirements
+## Primary data
 
-**Python:**
-pandas
-numpy
-scipy
-statsmodels
-scikit-learn
+- MODIS MOD13Q1 Collection 6.1 NDVI: https://doi.org/10.5067/MODIS/MOD13Q1.061
+- MODIS MCD12Q1 Collection 6.1 land cover: https://doi.org/10.5067/MODIS/MCD12Q1.061
+- ERA5-Land: https://doi.org/10.5194/essd-13-4349-2021
+- CORINE Land Cover: https://land.copernicus.eu/en/products/corine-land-cover
+- FAO GAUL 2015 administrative polygons, accessed through Google Earth Engine
 
-**Google Earth Engine:** GEE account required to run the extraction 
-script. Processed data is provided in `data/` so re-extraction is 
-not necessary to reproduce the analysis.
+The earlier GEE script also contains a WorldCover comparison. The primary class masks for both the annual and monthly analyses use MCD12Q1.
 
-## How to reproduce
+## Software licence
 
-1. Run `analysis/analysis_v2.py` with the processed dataset in `data/`
-2. Outputs will be saved to `outputs/`
-3. GEE script in `gee/` can be used to re-extract raw data if needed
-
-## Citation
-
-If you use this code or data, please cite the archived version:
-
-> Yakar, F. (2025). germany-ndvi-hydroclimatic-coupling [Software]. 
+The existing [`LICENSE`](LICENSE) applies to repository software. Source datasets remain subject to their providers' terms. A citable manuscript version and any archival DOI should be added only after the revised manuscript and bibliography are finalized.

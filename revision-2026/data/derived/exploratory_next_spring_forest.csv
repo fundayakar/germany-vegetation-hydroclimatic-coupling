@@ -1,0 +1,3 @@
+outcome,previous_summer_predictor,controls,n_state_years,n_years,standardized_beta,year_cluster_se,two_sided_p
+spring_ndvi_anom,prior_sm_rootzone_anom,"spring_sm_rootzone_anom, spring_vpd_anom_kpa, prior_ndvi_anom",360,24,0.08820916026807739,0.1277198252015762,0.49669961581043187
+spring_ndvi_anom,prior_vpd_anom_kpa,"spring_sm_rootzone_anom, spring_vpd_anom_kpa, prior_ndvi_anom",360,24,0.02996111790309562,0.12074913840860185,0.8062381095516763
